@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.loginpage">
+
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".payment" />
+        <activity android:name=".forget" />
+        <activity android:name=".signup" />
+        <activity android:name=".qrcode" />
+        <activity android:name=".cart" />
+        <activity android:name=".foodmenu" />
+        <activity android:name=".Aboutus" />
+        <activity android:name=".help" />
+        <activity android:name=".seat3" />
+        <activity android:name=".seat2" />
+        <activity android:name=".seatbook" />
+        <activity android:name=".seat1" />
+        <activity android:name=".seat" />
+        <activity android:name=".Home_Page" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".welcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: co.gofynd.library:gravity-view:1.0@aar">
+    <CLASSES>
+      <root url="file://$APPLICATION_HOME_DIR$/plugins/gradle-java/caches/transforms-2/files-2.1/019ca0697c4708d71d9c2a76bf320d2f/jetified-gravity-view-1.0/AndroidManifest.xml" />
+      <root url="jar://$APPLICATION_HOME_DIR$/plugins/gradle-java/caches/transforms-2/files-2.1/019ca0697c4708d71d9c2a76bf320d2f/jetified-gravity-view-1.0/jars/classes.jar!/" />
+      <root url="file://$APPLICATION_HOME_DIR$/plugins/gradle-java/caches/transforms-2/files-2.1/019ca0697c4708d71d9c2a76bf320d2f/jetified-gravity-view-1.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$APPLICATION_HOME_DIR$/plugins/gradle-java/caches/modules-2/files-2.1/co.gofynd.library/gravity-view/1.0/fac95d78818dd7dedb57a300b676f79552f4d9e4/gravity-view-1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$APPLICATION_HOME_DIR$/plugins/gradle-java/caches/modules-2/files-2.1/co.gofynd.library/gravity-view/1.0/da54e934aba9de9170f0ba3b820f830f3aacdf65/gravity-view-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "536970859919",
+    "project_id": "restaurente-intelligente-7b45f",
+    "storage_bucket": "restaurente-intelligente-7b45f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536970859919:android:618c2d3cc433304270e7fa",
+        "android_client_info": {
+          "package_name": "com.example.loginpage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536970859919-i26ndosqpqkhie62tdb6g6gqomjmtu0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH1BuDeViuztmmYDgjFaLSzdGV4JOwc5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536970859919-i26ndosqpqkhie62tdb6g6gqomjmtu0u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
