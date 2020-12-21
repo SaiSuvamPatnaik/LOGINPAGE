@@ -168,7 +168,7 @@ public class payment extends AppCompatActivity {
             Toast.makeText(payment.this,"Payment Cancelled By User",Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(payment.this,"Transaction Failed",Toast.LENGTH_SHORT).show();
+            Toast.makeText(payment.this,"Failed Transaction",Toast.LENGTH_SHORT).show();
         }
     }
 
