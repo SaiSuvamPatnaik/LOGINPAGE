@@ -4,10 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,30 +68,47 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = mail.getText().toString();
                 String passw = pass.getText().toString();
-                if (email.isEmpty()){
-                    mail.setError("Enter Mail !!");
-                    mail.requestFocus();
-                    return;
-                }
-                if (passw.isEmpty()){
-                    pass.setError("Enter Password !!");
-                    pass.requestFocus();
-                    return;
-                }
-                mFirebaseAuth.signInWithEmailAndPassword(email,passw)
-                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                            @Override
-                            public void onSuccess(AuthResult authResult) {
 
-                                startActivity(new Intent(MainActivity.this,Home_Page.class));
-                                finish();
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(MainActivity.this,"Incorrect Credential !!! ",Toast.LENGTH_SHORT).show();
+
+                if(isConnected(MainActivity.this)==false){
+                    LayoutInflater inflater =  getLayoutInflater();
+                    View layout = inflater.inflate(R.layout.alert_dialog,(ViewGroup)findViewById(R.id.alert));
+
+                    Toast toast = new Toast(getApplicationContext());
+                    toast.setGravity(Gravity.CENTER,0,150);
+                    toast.setDuration(Toast.LENGTH_LONG);
+                    toast.setView(layout);
+
+                    toast.show();
+                }
+                if(isConnected(MainActivity.this)==true){
+                    if (email.isEmpty()){
+                        mail.setError("Enter Mail !!");
+                        mail.requestFocus();
+                        return;
                     }
-                });
+                    if (passw.isEmpty()){
+                        pass.setError("Enter Password !!");
+                        pass.requestFocus();
+                        return;
+                    }
+                    mFirebaseAuth.signInWithEmailAndPassword(email,passw)
+                            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                                @Override
+                                public void onSuccess(AuthResult authResult) {
+
+                                    startActivity(new Intent(MainActivity.this,Home_Page.class));
+                                    finish();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(MainActivity.this,"Incorrect Credential !!! ",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+
+
             }
         });
 
@@ -98,6 +123,26 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+
+
+
+
+
+
+    private boolean isConnected(MainActivity mainActivity) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) mainActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo wificonn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo mobileconn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        if ((wificonn!=null && wificonn.isConnected() || (mobileconn!=null && mobileconn.isConnected()))){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
 
 
 

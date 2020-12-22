@@ -1,8 +1,13 @@
 package com.example.loginpage;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -135,6 +140,13 @@ public class payment extends AppCompatActivity {
                 break;
         }
     }
+
+
+
+
+
+    
+
 
     private void upipaymentdataoperation(ArrayList<String> data){
         String str = data.get(0);
