@@ -63,7 +63,7 @@ public class payment extends AppCompatActivity {
         else {
             data1 = Integer.parseInt(getIntent().getStringExtra("p1"));
 
-            amt.setText(String.valueOf(data1));
+            amt.setText("Rs "+String.valueOf(data1));
 
         }
 

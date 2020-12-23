@@ -25,7 +25,7 @@
 
 
 
-        <activity android:name=".map"></activity>
+
         <activity android:name=".payment" />
         <activity android:name=".forget" />
         <activity android:name=".signup" />
@@ -40,6 +40,7 @@
         <activity android:name=".seat1" />
         <activity android:name=".seat" />
         <activity android:name=".Home_Page" />
+        <activity android:name=".map" />
         <activity android:name=".MainActivity" />
         <activity android:name=".welcome">
             <intent-filter>
