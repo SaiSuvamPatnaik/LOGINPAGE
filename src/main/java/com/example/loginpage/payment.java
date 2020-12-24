@@ -172,16 +172,7 @@ public class payment extends AppCompatActivity {
             }
 
         }
-        if (status.equals("success")){
-            Toast.makeText(payment.this,"Transaction Successful",Toast.LENGTH_LONG).show();
-            Log.d("UPI","responseStr: "+approvalRefNo);
-        }
-        else if ("Payment Cancelled By User".equals(paymentCancel)){
-            Toast.makeText(payment.this,"Payment Cancelled By User",Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Toast.makeText(payment.this,"Failed Transaction",Toast.LENGTH_SHORT).show();
-        }
+        
     }
 
     public void opennn() {
