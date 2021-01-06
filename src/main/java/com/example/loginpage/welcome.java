@@ -17,7 +17,7 @@ public class welcome extends AppCompatActivity {
 
     private static int SPLASH_SCREEN = 6000;
 
-    Animation topAnim,bottomAnim;
+    Animation topAnim,bottomAnim,leftanim;
     ImageView logo;
     TextView welcome,rest,intel;
 
@@ -31,13 +31,14 @@ public class welcome extends AppCompatActivity {
         //ANIMATION
         topAnim = AnimationUtils.loadAnimation(this,R.anim.top_anim);
         bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_anim);
+        leftanim=AnimationUtils.loadAnimation(this,R.anim.left_anim);
 
         logo=findViewById(R.id.imageView);
         welcome=findViewById(R.id.textView6);
         rest=findViewById(R.id.textView7);
         intel=findViewById(R.id.textView8);
 
-        logo.setAnimation(topAnim);
+        logo.setAnimation(leftanim);
         welcome.setAnimation(topAnim);
         rest.setAnimation(bottomAnim);
         intel.setAnimation(bottomAnim);

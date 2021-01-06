@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = mail.getText().toString();
                 String passw = pass.getText().toString();
-                
+
 
 
                 if(isConnected(MainActivity.this)==false){
@@ -93,6 +93,15 @@ public class MainActivity extends AppCompatActivity {
                         pass.requestFocus();
                         return;
                     }
+                    LayoutInflater inflater =  getLayoutInflater();
+                    View layout = inflater.inflate(R.layout.loading,(ViewGroup)findViewById(R.id.alert));
+
+                    Toast toast = new Toast(getApplicationContext());
+                    toast.setGravity(Gravity.CENTER,0,150);
+
+                    toast.setView(layout);
+
+                    toast.show();
                     mFirebaseAuth.signInWithEmailAndPassword(email,passw)
                             .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                 @Override
