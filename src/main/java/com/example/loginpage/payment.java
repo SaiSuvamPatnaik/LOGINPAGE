@@ -67,6 +67,8 @@ public class payment extends AppCompatActivity {
 
         }
 
+        note.setText("Payment For Order");
+
         nxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -172,15 +174,12 @@ public class payment extends AppCompatActivity {
             }
 
         }
-        
+
     }
 
     public void opennn() {
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
-        int datas=Integer.parseInt(amt.getText().toString());
-        myRef.child("Paid").setValue(String.valueOf(datas));
+
         Intent intent = new Intent(payment.this,qrcode.class);
         startActivity(intent);
 

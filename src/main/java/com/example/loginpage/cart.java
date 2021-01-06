@@ -19,6 +19,7 @@ public class cart extends AppCompatActivity {
     TextView out1,out2,out3,out4,out5,out6,out7,out8,out9,out10,out11;
     private Button button;
     public String p1;
+    int orderno=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -152,36 +153,71 @@ public class cart extends AppCompatActivity {
 
     public void openqrcode(){
         // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
-        int data1=Integer.parseInt(out1.getText().toString());
-        data1=data1/50;
-        myRef.child("Chilli Burger").setValue(String.valueOf(data1));
-        int data2=Integer.parseInt(out2.getText().toString());
-        data2=data2/80;
-        myRef.child("Grilled Sandwich").setValue(String.valueOf(data2));
-        int data3=Integer.parseInt(out3.getText().toString());
-        data3=data3/100;
-        myRef.child("Caesar Salad").setValue(String.valueOf(data3));
-        int data4=Integer.parseInt(out4.getText().toString());
-        data4=data4/200;
-        myRef.child("Paneer Makhni").setValue(String.valueOf(data4));
-        int data5=Integer.parseInt(out5.getText().toString());
-        data5=data5/180;
-        myRef.child("Mix Vegetable").setValue(String.valueOf(data5));
-        int data6=Integer.parseInt(out6.getText().toString());
-        data6=data6/40;
-        myRef.child("Butter Naan").setValue(String.valueOf(data6));
-        int data7=Integer.parseInt(out7.getText().toString());
-        data7=data7/80;
-        myRef.child("Jeera Rice").setValue(String.valueOf(data7));
-        int data8=Integer.parseInt(out8.getText().toString());
-        data8=data8/150;
-        myRef.child("Rasgulla").setValue(String.valueOf(data8));
-        int data10=Integer.parseInt(out10.getText().toString());
-        myRef.child("Total Cost ").setValue(String.valueOf(data10));
+
+
+        int food1=Integer.parseInt(out1.getText().toString());
+        food1=food1/50;
+        String data1=String.valueOf(food1);
+        String Chilli_Burger = data1;
+
+        int food2=Integer.parseInt(out2.getText().toString());
+        food2=food2/80;
+        String data2=String.valueOf(food2);
+        String Grilled_Sandwich = data2;
+
+        int food3=Integer.parseInt(out3.getText().toString());
+        food3=food3/100;
+        String data3=String.valueOf(food3);
+        String Caesar_Salad = data3;
+
+        int food4=Integer.parseInt(out4.getText().toString());
+        food4=food4/200;
+        String data4=String.valueOf(food4);
+        String Paneer_Makhni = data4;
+
+        int food5=Integer.parseInt(out5.getText().toString());
+        food5=food5/180;
+        String data5=String.valueOf(food5);
+        String Mix_Vegetable = data5;
+
+        int food6=Integer.parseInt(out6.getText().toString());
+        food6=food6/40;
+        String data6=String.valueOf(food6);
+        String Butter_Nan = data6;
+
+        int food7=Integer.parseInt(out7.getText().toString());
+        food7=food7/80;
+        String data7=String.valueOf(food7);
+        String Jeera_Rice = data7;
+
+        int food8=Integer.parseInt(out8.getText().toString());
+        food8=food8/150;
+        String data8=String.valueOf(food8);
+        String Rasgulla = data8;
+
+        int food10=Integer.parseInt(out10.getText().toString());
+        String data10=String.valueOf(food10);
+        String Total_Cost = data10;
+
+
         String data11=out11.getText().toString();
-        myRef.child("Table Booked ").setValue(data11);
+        String Table_Booked = data11;
+
+
+
+
+
+        dataholder obj = new dataholder(Chilli_Burger,Grilled_Sandwich,Caesar_Salad,Paneer_Makhni,
+                            Mix_Vegetable,Butter_Nan,Jeera_Rice,Rasgulla,Total_Cost,Table_Booked);
+
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Orders: ");
+        String id = myRef.push().getKey();
+        myRef.child("Order id = "+id).setValue(obj);
+
+
+
 
 
 
@@ -194,3 +230,18 @@ public class cart extends AppCompatActivity {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

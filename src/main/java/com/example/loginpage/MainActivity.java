@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = mail.getText().toString();
                 String passw = pass.getText().toString();
+                
 
 
                 if(isConnected(MainActivity.this)==false){
