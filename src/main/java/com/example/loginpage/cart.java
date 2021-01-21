@@ -217,12 +217,6 @@ public class cart extends AppCompatActivity {
         myRef.child("Order id = "+id).setValue(obj);
 
 
-
-
-
-
-
-
         Intent intent = new Intent(this,payment.class);
         intent.putExtra("p1",p1);
         startActivity(intent);

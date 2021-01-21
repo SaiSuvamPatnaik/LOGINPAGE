@@ -22,6 +22,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -180,6 +181,7 @@ public class payment extends AppCompatActivity {
     public void opennn() {
 
 
+        Log.d("UPI","onActivityResult: "+status);
         Intent intent = new Intent(payment.this,qrcode.class);
         startActivity(intent);
 
