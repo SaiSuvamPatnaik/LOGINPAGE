@@ -94,7 +94,7 @@
                                 android:background="#00000000"
                                 android:padding="20dp"
                                 android:text="Dine in "
-                                android:textColor="#FFFFFF" />
+                                android:textColor="@drawable/text1" />
 
 
                         </RelativeLayout>
@@ -145,7 +145,7 @@
                                 android:background="#00000000"
                                 android:padding="20dp"
                                 android:text="DINE IN"
-                                android:textColor="#FFFFFF" />
+                                android:textColor="@drawable/text1" />
 
 
                         </RelativeLayout>
@@ -190,7 +190,7 @@
                                 android:background="#00000000"
                                 android:padding="20dp"
                                 android:text="DINE IN"
-                                android:textColor="#FFFFFF" />
+                                android:textColor="@drawable/text1"/>
 
 
                         </RelativeLayout>
@@ -242,7 +242,7 @@
                                 android:background="#00000000"
                                 android:padding="20dp"
                                 android:text="DINE IN"
-                                android:textColor="#FFFFFF" />
+                                android:textColor="@drawable/text1" />
 
 
                         </RelativeLayout>
@@ -286,7 +286,7 @@
                                 android:background="#00000000"
                                 android:padding="20dp"
                                 android:text="Dine in"
-                                android:textColor="#FFFFFF" />
+                                android:textColor="@drawable/text1" />
 
 
                         </RelativeLayout>

@@ -499,7 +499,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round4"
         android:text="CART"
-        android:textColor="@color/ic_launcher_background"
+        android:textColor="@drawable/text1"
         android:textSize="18sp"
          />
 

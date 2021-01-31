@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/curve2"
         android:text="Generate QR code"
-        android:textColor="@color/ic_launcher_background"
+        android:textColor="@drawable/text1"
         android:textStyle="bold"
         android:textSize="14sp"
         android:layout_marginTop="600dp"
