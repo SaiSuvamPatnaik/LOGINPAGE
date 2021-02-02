@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/home/saisuvam/Downloads/android-studio-ide-193.6626763-linux/android-studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/network_check/baseline_network_check_24.xml" />
+                                      <entry key="url" value="jar:file:/home/saisuvam/Downloads/android-studio-ide-193.6626763-linux/android-studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/fingerprint/baseline_fingerprint_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ff0000" />
-                            <entry key="outputName" value="error" />
+                            <entry key="outputName" value="fingerprint" />
                           </map>
                         </option>
                       </PersistentState>

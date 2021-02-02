@@ -3,6 +3,9 @@ package com.example.loginpage;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricManager;
+import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -28,13 +31,15 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.concurrent.Executor;
+
 public class MainActivity extends AppCompatActivity {
 
     View view,view2;
     ImageView imageview2;
     TextView mail,pass,textView3,textView4,frgtpass;
 
-    Button login,signup;
+    Button login,signup,btn;
 
     FirebaseAuth mFirebaseAuth;
     @Override
@@ -45,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         mFirebaseAuth=FirebaseAuth.getInstance();
         pass=(TextView)findViewById(R.id.pass);
+        btn=(Button) findViewById(R.id.btn);
         mail=(TextView)findViewById(R.id.mail);
         login=(Button)findViewById(R.id.login);
         signup=(Button)findViewById(R.id.signup);
@@ -54,6 +60,59 @@ public class MainActivity extends AppCompatActivity {
         imageview2=(ImageView)findViewById(R.id.imageView2);
         textView3=(TextView)findViewById(R.id.textView3);
         textView4=(TextView)findViewById(R.id.textView4);
+
+        //Fingerprint part
+        BiometricManager biometricManager = BiometricManager.from(this);
+        switch (biometricManager.canAuthenticate()){
+            case BiometricManager.BIOMETRIC_SUCCESS:
+
+                break;
+            case BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE:
+
+                break;
+            case BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE:
+
+
+                break;
+            case BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED:
+
+                break;
+        };
+
+        Executor executor = ContextCompat.getMainExecutor(this);
+        final BiometricPrompt biometricPrompt = new BiometricPrompt(MainActivity.this, executor, new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+                super.onAuthenticationError(errorCode, errString);
+            }
+
+            @Override
+            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
+                super.onAuthenticationSucceeded(result);
+                Toast.makeText(getApplicationContext(), "Login success", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this,map.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onAuthenticationFailed() {
+                super.onAuthenticationFailed();
+            }
+        });
+
+        final BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                .setTitle("Login")
+                .setDescription("Use Fingerprint to login")
+                .setNegativeButtonText("Cancel")
+                .build();
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                biometricPrompt.authenticate(promptInfo);
+
+            }
+        });
 
         frgtpass.setOnClickListener(new View.OnClickListener() {
             @Override
